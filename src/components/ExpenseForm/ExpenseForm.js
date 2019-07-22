@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Form from './shared/Form';
-import Label from './shared/Label';
-import Input from './shared/Input';
-import Button from './shared/Button';
+import Form from '../shared/Form';
+import Label from '../shared/Label';
+import Input from '../shared/Input';
+import Button from '../shared/Button';
 
 const labelStyles = `
   margin-bottom: 16px;  

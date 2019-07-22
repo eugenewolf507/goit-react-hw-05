@@ -1,7 +1,11 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from 'redux';
+import { devToolsEnhancer } from 'redux-devtools-extension';
+import reducerBudgetForm from '../components/BudgetForm/BudgetForm';
 
-const reducer = (state = {}, action) => state;
+const rootReducer = combineReducers({
+  reducerBudgetForm,
+});
 
-const store = createStore(reducer);
+const store = createStore(rootReducer, devToolsEnhancer());
 
 export default store;
