@@ -3,7 +3,7 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 import reducerBudgetForm from '../components/BudgetForm/reducerBudgetForm';
 
 const rootReducer = combineReducers({
-  reducerBudgetForm,
+  budget: reducerBudgetForm,
 });
 
 const store = createStore(rootReducer, devToolsEnhancer());

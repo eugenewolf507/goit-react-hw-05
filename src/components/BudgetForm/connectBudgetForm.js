@@ -1,18 +1,17 @@
-import { connect } from 'react-redux';
-import * as actionBudgetForm from './actionBudgetForm';
-import BudgetForm from './BudgetForm';
+// import { connect } from 'react-redux';
+// import * as actionBudgetForm from './actionBudgetForm';
+// import BudgetForm from './BudgetForm';
 
-const mapStateToProps = state => ({
-  budget: state.budget,
-});
+// const mapStateToProps = state => ({
+//   budget: state.budget,
+// });
 
-const mapDispatchToProps = dispatch => ({
-  onSave: reducerBudgetForm =>
-    dispatch(actionBudgetForm.addBudget(reducerBudgetForm)),
-});
+// const mapDispatchToProps = dispatch => ({
+//   addBudget: () => dispatch(actionBudgetForm.addBudget()),
+// });
 
-export default connect(
-  // mapStateToProps,
-  null,
-  mapDispatchToProps,
-)(BudgetForm);
+// export default connect(
+//   // mapStateToProps,
+//   null,
+//   mapDispatchToProps,
+// )(BudgetForm);

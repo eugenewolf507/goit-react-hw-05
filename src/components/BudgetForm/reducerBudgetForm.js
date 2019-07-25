@@ -1,12 +1,16 @@
-import Type from './BudgetForm';
+import { Type } from './actionBudgetForm';
 
-const InitialState = 5;
+const initialState = {
+  budget: 0,
+};
 
-const reducerBudgetForm = (state = InitialState, { type, payload }) => {
-  switch (type) {
+console.log(Type);
+
+const reducerBudgetForm = (state = 0, action) => {
+  switch (action.type) {
     case Type.ADD_BUDGET: {
       console.log('hhhhhhh');
-      return state + payload;
+      return action.payload;
     }
 
     default:

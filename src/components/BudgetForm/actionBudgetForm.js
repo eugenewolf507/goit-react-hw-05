@@ -2,7 +2,7 @@ export const Type = {
   ADD_BUDGET: 'ADD_BUDGET',
 };
 
-export const addBudget = () => ({
+export const addBudget = value => ({
   type: Type.ADD_BUDGET,
-  payload: 2,
+  payload: value,
 });
