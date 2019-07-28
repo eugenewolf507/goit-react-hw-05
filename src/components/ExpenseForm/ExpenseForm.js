@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
+import { addExpense } from './actionExpenseForm';
 
 const labelStyles = `
   margin-bottom: 16px;  
 `;
 
-export default class ExpenseForm extends Component {
+class ExpenseForm extends Component {
   state = {
     name: '',
     amount: 0,
@@ -23,7 +26,7 @@ export default class ExpenseForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
 
-    this.props.onSave({
+    this.props.addExpense({
       ...this.state,
     });
 
@@ -31,6 +34,7 @@ export default class ExpenseForm extends Component {
   };
 
   render() {
+    const { name, amount } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
@@ -38,7 +42,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="text"
             name="name"
-            value={this.state.name}
+            value={name}
             onChange={this.handleChange}
           />
         </Label>
@@ -47,7 +51,7 @@ export default class ExpenseForm extends Component {
           <Input
             type="number"
             name="amount"
-            value={this.state.amount}
+            value={amount}
             onChange={this.handleChange}
           />
         </Label>
@@ -57,3 +61,16 @@ export default class ExpenseForm extends Component {
     );
   }
 }
+
+const mapDispatchToProps = dispatch => ({
+  addExpense: ({ name, amount }) => dispatch(addExpense({ name, amount })),
+});
+
+ExpenseForm.propTypes = {
+  addExpense: propTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(ExpenseForm);

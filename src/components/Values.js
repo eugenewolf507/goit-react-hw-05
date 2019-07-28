@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
+import * as selectors from '../redux/selectors';
 import Stat from './Stat';
 
 const Container = styled.section`
@@ -16,4 +18,12 @@ const Values = ({ budget, expenses, balance }) => (
   </Container>
 );
 
-export default Values;
+const mapStateToProps = state => ({
+  budget: state.budget,
+  expenses: selectors.calculateTotalExpenses(state),
+});
+
+export default connect(
+  mapStateToProps,
+  null,
+)(Values);

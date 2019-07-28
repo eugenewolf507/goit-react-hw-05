@@ -2,9 +2,7 @@ export const Type = {
   ADD_EXPENSE: 'ADD_EXPENSE',
 };
 
-const addExpense = (budgetAmountInput, budgetNameInput) => ({
+export const addExpense = ({ amount, name }) => ({
   type: Type.ADD_EXPENSE,
-  payload: { budgetAmountInput, budgetNameInput },
+  payload: { amount, name },
 });
-
-export default addExpense;

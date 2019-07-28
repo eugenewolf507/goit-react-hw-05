@@ -53,16 +53,13 @@ export default class App extends Component {
   };
 
   render() {
-    const { expenses, budget } = this.state;
-    const totalExpenses = calculateTotalExpenses(expenses);
-    const balance = calculateBalance(budget, totalExpenses);
+    const { expenses } = this.state;
 
     return (
       <Container>
-        {/* <BudgetForm onSave={this.saveBudget} /> */}
         <BudgetForm />
-        <Values budget={budget} expenses={totalExpenses} balance={balance} />
-        <ExpenseForm onSave={this.addExpense} />
+        <Values />
+        <ExpenseForm />
         {expenses.length > 0 && (
           <ExpensesTable items={expenses} onRemove={this.removeExpense} />
         )}

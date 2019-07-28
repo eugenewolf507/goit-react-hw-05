@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
@@ -11,7 +12,7 @@ const labelStyles = `
 `;
 
 class BudgetForm extends Component {
-  state = { budget: 0 };
+  state = { budget: '' };
 
   handleChange = e => {
     this.setState({
@@ -22,18 +23,19 @@ class BudgetForm extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addBudget(this.state.budget);
+    this.setState({ budget: '' });
   };
 
   render() {
+    const { budget } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label customStyles={labelStyles}>
           Enter your total budget
           <Input
             type="number"
-            value={this.state.budget}
+            value={budget}
             onChange={this.handleChange}
-            placeholder={0}
             name="budget"
           />
         </Label>
@@ -45,8 +47,12 @@ class BudgetForm extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addBudget: value => dispatch(addBudget(value)),
+  addBudget: budget => dispatch(addBudget(budget)),
 });
+
+BudgetForm.propTypes = {
+  addBudget: propTypes.func.isRequired,
+};
 
 export default connect(
   null,
