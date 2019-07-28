@@ -21,6 +21,7 @@ const Values = ({ budget, expenses, balance }) => (
 const mapStateToProps = state => ({
   budget: state.budget,
   expenses: selectors.calculateTotalExpenses(state),
+  balance: selectors.calculateBalance(state),
 });
 
 export default connect(
