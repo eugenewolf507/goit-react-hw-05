@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 import * as selectors from '../redux/selectors';
 import Stat from './Stat';
@@ -28,3 +29,9 @@ export default connect(
   mapStateToProps,
   null,
 )(Values);
+
+Values.propTypes = {
+  budget: propTypes.number.isRequired,
+  expenses: propTypes.number.isRequired,
+  balance: propTypes.number.isRequired,
+};

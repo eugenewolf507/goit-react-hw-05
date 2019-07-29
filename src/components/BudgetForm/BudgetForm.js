@@ -12,7 +12,7 @@ const labelStyles = `
 `;
 
 class BudgetForm extends Component {
-  state = { budget: '' };
+  state = { budget: 0 };
 
   handleChange = e => {
     this.setState({

@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
-import shortid from 'shortid';
+// import shortid from 'shortid';
 import BudgetForm from './BudgetForm/BudgetForm';
 import ExpenseForm from './ExpenseForm/ExpenseForm';
-import ExpensesTable from './ExpensesTable';
+import ExpensesTable from './ExpenseForm/ExpensesTable';
 import Values from './Values';
 
 const Container = styled.div`
@@ -18,33 +20,33 @@ const Container = styled.div`
   margin-right: auto;
 `;
 
-const calculateTotalExpenses = expenses => {
-  return expenses.reduce((total, expense) => total + expense.amount, 0);
-};
+// const calculateTotalExpenses = expenses => {
+//   return expenses.reduce((total, expense) => total + expense.amount, 0);
+// };
 
-const calculateBalance = (budget, expenses) => budget - expenses;
+// const calculateBalance = (budget, expenses) => budget - expenses;
 
-export default class App extends Component {
-  state = {
-    budget: 0,
-    expenses: [],
-  };
+class App extends Component {
+  // state = {
+  //   budget: 0,
+  //   expenses: [],
+  // };
 
-  saveBudget = value => {
-    this.setState({ budget: value });
-  };
+  // saveBudget = value => {
+  //   this.setState({ budget: value });
+  // };
 
-  addExpense = ({ name, amount }) => {
-    const expense = {
-      id: shortid.generate(),
-      name,
-      amount: Number(amount),
-    };
+  // addExpense = ({ name, amount }) => {
+  //   const expense = {
+  //     id: shortid.generate(),
+  //     name,
+  //     amount: Number(amount),
+  //   };
 
-    this.setState(state => ({
-      expenses: [expense, ...state.expenses],
-    }));
-  };
+  //   this.setState(state => ({
+  //     expenses: [expense, ...state.expenses],
+  //   }));
+  // };
 
   removeExpense = id => {
     this.setState(state => ({
@@ -53,7 +55,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { expenses } = this.state;
+    const { expenses } = this.props;
 
     return (
       <Container>
@@ -63,9 +65,30 @@ export default class App extends Component {
         {/* {expenses.length > 0 && (
           <ExpensesTable items={expenses} onRemove={this.removeExpense} />
         )} */}
-        <ExpensesTable items={expenses} onRemove={this.removeExpense} />
-        
+        {expenses.length > 0 && (
+          <ExpensesTable items={expenses} onRemove={this.removeExpense} />
+        )}
+        {/* <ExpensesTable items={expenses} onRemove={this.removeExpense} /> */}
       </Container>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  expenses: state.expenses,
+});
+
+App.propTypes = {
+  expenses: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+      amount: propTypes.number.isRequired,
+    }).isRequired,
+  ).isRequired,
+};
+
+export default connect(
+  mapStateToProps,
+  null,
+)(App);

@@ -5,7 +5,7 @@ import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
-import { addExpense } from './actionExpenseForm';
+import { addExpense } from './actionExpenses';
 
 const labelStyles = `
   margin-bottom: 16px;  

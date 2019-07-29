@@ -1,7 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
-import Button from './shared/Button';
+import { removeExpense } from './actionExpenses';
+import Button from '../shared/Button';
 
 const Table = styled.table`
   border-collapse: collapse;
@@ -19,7 +20,7 @@ const Table = styled.table`
   }
 `;
 
-const ExpensesTable = ({ items = [], onRemove }) => (
+const ExpensesTable = ({ items = [], removeExpense }) => (
   <Table>
     <thead>
       <tr>
@@ -34,7 +35,7 @@ const ExpensesTable = ({ items = [], onRemove }) => (
           <td>{name}</td>
           <td>{amount}</td>
           <td>
-            <Button label="Delete" onClick={() => onRemove(id)} />
+            <Button label="Delete" onClick={() => removeExpense(id)} />
           </td>
         </tr>
       ))}
@@ -43,10 +44,14 @@ const ExpensesTable = ({ items = [], onRemove }) => (
 );
 
 const mapStateToProps = state => ({
-items: state.expenses,
+  items: state.expenses,
 });
 
-export default connect (
+const mapDispatchtToProps = dispatch => ({
+  removeExpense: id => dispatch(removeExpense({ id })),
+});
+
+export default connect(
   mapStateToProps,
-  null,
+  mapDispatchtToProps,
 )(ExpensesTable);
