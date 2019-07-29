@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import styled from 'styled-components';
 import Button from './shared/Button';
 
@@ -41,4 +42,11 @@ const ExpensesTable = ({ items = [], onRemove }) => (
   </Table>
 );
 
-export default ExpensesTable;
+const mapStateToProps = state => ({
+items: state.expenses,
+});
+
+export default connect (
+  mapStateToProps,
+  null,
+)(ExpensesTable);

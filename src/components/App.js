@@ -60,9 +60,11 @@ export default class App extends Component {
         <BudgetForm />
         <Values />
         <ExpenseForm />
-        {expenses.length > 0 && (
+        {/* {expenses.length > 0 && (
           <ExpensesTable items={expenses} onRemove={this.removeExpense} />
-        )}
+        )} */}
+        <ExpensesTable items={expenses} onRemove={this.removeExpense} />
+        
       </Container>
     );
   }
