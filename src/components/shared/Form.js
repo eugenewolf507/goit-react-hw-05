@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledForm = styled.form`
@@ -14,5 +15,10 @@ const StyledForm = styled.form`
 const Form = ({ onSubmit = () => null, children }) => (
   <StyledForm onSubmit={onSubmit}>{children}</StyledForm>
 );
+
+Form.propTypes = {
+  children: propTypes.array.isRequired,
+  onSubmit: propTypes.func.isRequired,
+};
 
 export default Form;

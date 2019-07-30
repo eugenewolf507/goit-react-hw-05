@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
-import { addBudget } from './actionBudgetForm';
 
 const labelStyles = `
   margin-bottom: 16px;  
 `;
 
 class BudgetForm extends Component {
-  state = { budget: 0 };
+  state = { budget: '' };
 
   handleChange = e => {
     this.setState({
@@ -37,6 +35,7 @@ class BudgetForm extends Component {
             value={budget}
             onChange={this.handleChange}
             name="budget"
+            placeholder={budget}
           />
         </Label>
 
@@ -46,15 +45,8 @@ class BudgetForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addBudget: budget => dispatch(addBudget(budget)),
-});
-
 BudgetForm.propTypes = {
   addBudget: propTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(BudgetForm);
+export default BudgetForm;

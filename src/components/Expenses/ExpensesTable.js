@@ -1,7 +1,6 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
-import { removeExpense } from './actionExpenses';
 import Button from '../shared/Button';
 
 const Table = styled.table`
@@ -43,15 +42,15 @@ const ExpensesTable = ({ items = [], removeExpense }) => (
   </Table>
 );
 
-const mapStateToProps = state => ({
-  items: state.expenses,
-});
+ExpensesTable.propTypes = {
+  items: propTypes.arrayOf(
+    propTypes.shape({
+      id: propTypes.string.isRequired,
+      name: propTypes.string.isRequired,
+      amount: propTypes.number.isRequired,
+    }),
+  ).isRequired,
+  removeExpense: propTypes.func.isRequired,
+};
 
-const mapDispatchtToProps = dispatch => ({
-  removeExpense: id => dispatch(removeExpense( id )),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchtToProps,
-)(ExpensesTable);
+export default ExpensesTable;

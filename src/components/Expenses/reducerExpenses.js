@@ -1,6 +1,6 @@
 import { Type } from './actionExpenses';
 
-const reducerExpenses = (state = null, {type, payload}) => {
+const reducerExpenses = (state = null, { type, payload }) => {
   switch (type) {
     case Type.ADD_EXPENSE: {
       return [...state, payload];

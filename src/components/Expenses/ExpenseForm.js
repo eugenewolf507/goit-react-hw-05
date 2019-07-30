@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import Form from '../shared/Form';
 import Label from '../shared/Label';
 import Input from '../shared/Input';
 import Button from '../shared/Button';
-import { addExpense } from './actionExpenses';
 
 const labelStyles = `
   margin-bottom: 16px;  
@@ -14,7 +12,7 @@ const labelStyles = `
 class ExpenseForm extends Component {
   state = {
     name: '',
-    amount: 0,
+    amount: '',
   };
 
   handleChange = e => {
@@ -30,7 +28,7 @@ class ExpenseForm extends Component {
       ...this.state,
     });
 
-    this.setState({ name: '', amount: 0 });
+    this.setState({ name: '', amount: '' });
   };
 
   render() {
@@ -62,15 +60,8 @@ class ExpenseForm extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => ({
-  addExpense: ({ name, amount }) => dispatch(addExpense({ name, amount })),
-});
-
 ExpenseForm.propTypes = {
   addExpense: propTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  mapDispatchToProps,
-)(ExpenseForm);
+export default ExpenseForm;

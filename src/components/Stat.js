@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -28,5 +29,10 @@ const Stat = ({ label, value, isPositive }) => (
     <Value>{value}&nbsp;&#x24;</Value>
   </Container>
 );
+
+Stat.propTypes = {
+  label: propTypes.string.isRequired,
+  value: propTypes.number.isRequired,
+};
 
 export default Stat;

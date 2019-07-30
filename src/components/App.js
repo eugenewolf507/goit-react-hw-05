@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import propTypes from 'prop-types';
 import styled from 'styled-components';
-// import shortid from 'shortid';
-import BudgetForm from './BudgetForm/BudgetForm';
-import ExpenseForm from './ExpenseForm/ExpenseForm';
-import ExpensesTable from './ExpenseForm/ExpensesTable';
+import BudgetForm from './BudgetForm/containerBudgetForm';
+import ExpenseForm from './Expenses/containerExpenseForm';
+import ExpensesTable from './Expenses/containerExpensesTable';
 import Values from './Values';
 
 const Container = styled.div`
@@ -21,7 +20,6 @@ const Container = styled.div`
 `;
 
 class App extends Component {
-
   removeExpense = id => {
     this.setState(state => ({
       expenses: state.expenses.filter(expense => expense.id !== id),
@@ -36,10 +34,10 @@ class App extends Component {
         <BudgetForm />
         <Values />
         <ExpenseForm />
-                {expenses.length > 0 && (
+        {expenses.length > 0 && (
           <ExpensesTable items={expenses} onRemove={this.removeExpense} />
         )}
-              </Container>
+      </Container>
     );
   }
 }
