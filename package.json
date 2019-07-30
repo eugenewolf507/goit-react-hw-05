@@ -15,6 +15,7 @@
     "redux-devtools-extension": "^2.13.8",
     "prop-types": "^15.7.2"
   },
+  "homepage": "https://eugenewolf507.github.io/goit-react-hw-05/build",
   "devDependencies": {
     "eslint-config-airbnb": "^17.1.1",
     "eslint-config-prettier": "^6.0.0",
