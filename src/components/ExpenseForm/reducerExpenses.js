@@ -1,15 +1,12 @@
 import { Type } from './actionExpenses';
 
-const reducerExpenses = (state = null, action) => {
-  switch (action.type) {
+const reducerExpenses = (state = null, {type, payload}) => {
+  switch (type) {
     case Type.ADD_EXPENSE: {
-      return [...state, action.payload];
+      return [...state, payload];
     }
     case Type.REMOVE_EXPENSE: {
-      console.log(state);
-      console.log(action.payload);
-      console.log(state.filter(item => item.id !== action.payload));
-      return state.filter(item => item.id !== action.payload);
+      return state.filter(item => item.id !== payload);
     }
 
     default:

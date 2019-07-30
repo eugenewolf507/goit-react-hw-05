@@ -20,33 +20,7 @@ const Container = styled.div`
   margin-right: auto;
 `;
 
-// const calculateTotalExpenses = expenses => {
-//   return expenses.reduce((total, expense) => total + expense.amount, 0);
-// };
-
-// const calculateBalance = (budget, expenses) => budget - expenses;
-
 class App extends Component {
-  // state = {
-  //   budget: 0,
-  //   expenses: [],
-  // };
-
-  // saveBudget = value => {
-  //   this.setState({ budget: value });
-  // };
-
-  // addExpense = ({ name, amount }) => {
-  //   const expense = {
-  //     id: shortid.generate(),
-  //     name,
-  //     amount: Number(amount),
-  //   };
-
-  //   this.setState(state => ({
-  //     expenses: [expense, ...state.expenses],
-  //   }));
-  // };
 
   removeExpense = id => {
     this.setState(state => ({
@@ -62,14 +36,10 @@ class App extends Component {
         <BudgetForm />
         <Values />
         <ExpenseForm />
-        {/* {expenses.length > 0 && (
-          <ExpensesTable items={expenses} onRemove={this.removeExpense} />
-        )} */}
-        {expenses.length > 0 && (
+                {expenses.length > 0 && (
           <ExpensesTable items={expenses} onRemove={this.removeExpense} />
         )}
-        {/* <ExpensesTable items={expenses} onRemove={this.removeExpense} /> */}
-      </Container>
+              </Container>
     );
   }
 }
