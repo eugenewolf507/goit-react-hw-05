@@ -1,6 +1,6 @@
 # App: Expense Manager
 
-## [Try this App on GithubPages](https://eugenewolf507.github.io/MovieApp).
+## [Try this App on GithubPages](https://eugenewolf507.github.io/goit-react-hw-05-expense-manager/).
 
 ## Tech stack:
 
