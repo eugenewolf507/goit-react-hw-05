@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/goit-react-hw-05/build/static/css/main.0f54525f.chunk.css",
-    "main.js": "/goit-react-hw-05/build/static/js/main.a8572c1c.chunk.js",
-    "main.js.map": "/goit-react-hw-05/build/static/js/main.a8572c1c.chunk.js.map",
-    "runtime~main.js": "/goit-react-hw-05/build/static/js/runtime~main.908580b7.js",
-    "runtime~main.js.map": "/goit-react-hw-05/build/static/js/runtime~main.908580b7.js.map",
-    "static/js/2.bf00c6e1.chunk.js": "/goit-react-hw-05/build/static/js/2.bf00c6e1.chunk.js",
-    "static/js/2.bf00c6e1.chunk.js.map": "/goit-react-hw-05/build/static/js/2.bf00c6e1.chunk.js.map",
-    "index.html": "/goit-react-hw-05/build/index.html",
-    "precache-manifest.439c1f808070bc12a7eba5056b1f0a67.js": "/goit-react-hw-05/build/precache-manifest.439c1f808070bc12a7eba5056b1f0a67.js",
-    "service-worker.js": "/goit-react-hw-05/build/service-worker.js",
-    "static/css/main.0f54525f.chunk.css.map": "/goit-react-hw-05/build/static/css/main.0f54525f.chunk.css.map"
+    "main.css": "/goit-react-hw-05-expense-manager/static/css/main.951a195d.chunk.css",
+    "main.js": "/goit-react-hw-05-expense-manager/static/js/main.c5c38917.chunk.js",
+    "main.js.map": "/goit-react-hw-05-expense-manager/static/js/main.c5c38917.chunk.js.map",
+    "runtime~main.js": "/goit-react-hw-05-expense-manager/static/js/runtime~main.4bf5be61.js",
+    "runtime~main.js.map": "/goit-react-hw-05-expense-manager/static/js/runtime~main.4bf5be61.js.map",
+    "static/js/2.eba91739.chunk.js": "/goit-react-hw-05-expense-manager/static/js/2.eba91739.chunk.js",
+    "static/js/2.eba91739.chunk.js.map": "/goit-react-hw-05-expense-manager/static/js/2.eba91739.chunk.js.map",
+    "index.html": "/goit-react-hw-05-expense-manager/index.html",
+    "precache-manifest.1221b3156687bfb3e030c6743d1ff68a.js": "/goit-react-hw-05-expense-manager/precache-manifest.1221b3156687bfb3e030c6743d1ff68a.js",
+    "service-worker.js": "/goit-react-hw-05-expense-manager/service-worker.js",
+    "static/css/main.951a195d.chunk.css.map": "/goit-react-hw-05-expense-manager/static/css/main.951a195d.chunk.css.map"
   }
 }
